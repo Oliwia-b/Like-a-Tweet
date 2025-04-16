@@ -1,12 +1,17 @@
 from requests_oauthlib import OAuth1Session
 import webbrowser
-from _datetime import datetime
+from datetime import datetime
 import sys
+import os
+from dotenv import load_dotenv
 
 
+# Put the ID of the tweet you want to like
 TWEET_ID = 1904253134794596363
-API_KEY = "my api key"
-API_SECRET = "my api secret"
+
+load_dotenv(".env")
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
 
 
 def get_request_token():
